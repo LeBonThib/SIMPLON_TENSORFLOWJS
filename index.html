@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Simplon TensorFlow.js</title>
+    <meta charset="utf-8">
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Import jquery library -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+    <!-- <div id="loading">
+        <img id="loading-image" src="path/to/ajax-loader.gif" alt="Loading..." />
+    </div> -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div>
+                <h1> Simplon TensorFlow.js</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container text-container">
+        <div class="row justify-content-center">
+            <div>
+                <p class="lead text-center">Wait for the model to load before clicking the button to enable the webcam - at which point it will become visible to use.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <p class="text-center">Aliquam pharetra porta risus, nec vestibulum odio. Aenean non faucibus orci, eu consequat mi. Suspendisse cursus, ligula eu consequat pulvinar, lacus purus interdum neque, euismod volutpat felis nulla a velit. Sed libero nulla, pretium
+                    non diam eget, blandit tristique orci. Ut ultricies justo pharetra quam sollicitudin malesuada. Donec ac eleifend ipsum, id semper sapien. Phasellus lacinia felis sit amet turpis sodales, eget posuere leo porta. Vivamus nec lectus
+                    ultricies, faucibus diam sit amet, sollicitudin libero. Vivamus mauris lacus, imperdiet consequat diam et, gravida ullamcorper odio. </p>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <p class="text-center">Aliquam pharetra porta risus, nec vestibulum odio. Aenean non faucibus orci, eu consequat mi. Suspendisse cursus, ligula eu consequat pulvinar, lacus purus interdum neque, euismod volutpat felis nulla a velit. Sed libero nulla, pretium
+                    non diam eget, blandit tristique orci. Ut ultricies justo pharetra quam sollicitudin malesuada. Donec ac eleifend ipsum, id semper sapien. Phasellus lacinia felis sit amet turpis sodales, eget posuere leo porta. Vivamus nec lectus
+                    ultricies, faucibus diam sit amet, sollicitudin libero. Vivamus mauris lacus, imperdiet consequat diam et, gravida ullamcorper odio. </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div>
+                <button id="webcamButton" class="btn btn-primary">Enable Webcam</button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="container" id="webcam-container">
+        <div class="row">
+            <div class="col">
+                <div id="liveView" class="camView"></div>
+            </div>
+            <div class="col">
+                <div class="justify-content-center" id="historyBrowserContainer"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container text-container">
+        <div clss="row justify-content-center">
+            <p class="text-center">Aliquam pharetra porta risus, nec vestibulum odio. Aenean non faucibus orci, eu consequat mi. Suspendisse cursus, ligula eu consequat pulvinar, lacus purus interdum neque, euismod volutpat felis nulla a velit. Sed libero nulla, pretium non
+                diam eget, blandit tristique orci. Ut ultricies justo pharetra quam sollicitudin malesuada. Donec ac eleifend ipsum, id semper sapien. Phasellus lacinia felis sit amet turpis sodales, eget posuere leo porta. Vivamus nec lectus ultricies,
+                faucibus diam sit amet, sollicitudin libero. Vivamus mauris lacus, imperdiet consequat diam et, gravida ullamcorper odio. </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center classifyOnClick">
+            <div class="col">
+                <img id="uploadArea" src="tensorflow_catsdogs.jpg" title="Click to get classification!" />
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col">
+                <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display:none"></p>
+                <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Import TensorFlow.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
+    <!-- Load the coco-ssd model to use to recognize things in images -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <!-- Import the page's JavaScript to do some stuff -->
+    <script src="script2.js"></script>
+    <script>
+        $("#webcamButton").first().click(function() {
+            $(".text-container").first().fadeToggle("slow", "linear");
+        });
+    </script>
+    <script>
+        var loadFile = function(event) {
+            var image = document.getElementById('uploadArea');
+            image.src = URL.createObjectURL(event.target.files[0]);
+            var element4 = document.getElementById("ptitle2");
+            element4.parentNode.removeChild(element4);
+            var element5 = document.getElementById("highlighter2");
+            element5.parentNode.removeChild(element5);
+        };
+    </script>
+
+</body>
+
+</html>

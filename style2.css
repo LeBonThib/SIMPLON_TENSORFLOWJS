@@ -1,0 +1,75 @@
+/* video {
+    display: block;
+}
+ */
+
+.camView {
+    cursor: pointer;
+}
+
+.camView p {
+    position: absolute;
+    padding: 5px;
+    background-color: rgba(255, 0, 0, 0.699);
+    color: #FFF;
+    border: 1px dashed rgba(255, 255, 255, 0.7);
+    z-index: 2;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.highlighter {
+    background: rgba(0, 248, 248, 0.15);
+    border: 1px dashed #fff;
+    z-index: 1;
+    position: absolute;
+}
+
+#container {
+    border: 1px solid red;
+    border-radius: .5em;
+    padding: 10px;
+}
+
+.accordion {
+    height: 0px;
+    transition: 0.3s;
+}
+
+.accordion .slideActive {
+    height: 100px;
+}
+
+#historyBrowser {
+    border: 1px solid black;
+    width: 300px;
+    height: 480px;
+    margin-left: auto;
+}
+
+.classifyOnClick {
+    z-index: 0;
+}
+
+.videoView,
+.classifyOnClick {
+    cursor: pointer;
+}
+
+.videoView p,
+.classifyOnClick p {
+    position: absolute;
+    padding: 5px;
+    background-color: rgba(255, 111, 0, 0.85);
+    color: #FFF;
+    border: 1px dashed rgba(255, 255, 255, 0.7);
+    z-index: 2;
+    font-size: 12px;
+    margin: 0;
+}
+
+#uploadArea {
+    max-width: 90%;
+    max-height: 500px;
+}
